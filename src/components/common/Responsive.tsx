@@ -3,16 +3,10 @@ import styled from 'styled-components';
 import media from '../../lib/styles/media';
 
 export const ResponsiveTemplate = styled.div`
-  width: 1440px;
+  width: 1024px;
   margin-left: auto;
   margin-right: auto;
 
-  ${media.xxlarge} {
-    width: 1440px;
-  }
-  ${media.xlarge} {
-    width: 1024px;
-  }
   ${media.medium} {
     width: 768px;
   }

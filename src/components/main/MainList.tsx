@@ -22,7 +22,7 @@ const MainListTemplate = styled(ResponsiveTemplate)`
 function MainList() {
   return (
     <MainListTemplate>
-      <MainListItem />
+      AllPost
     </MainListTemplate>
   );
 }
