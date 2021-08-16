@@ -2,28 +2,19 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/common/Layout';
 import Header from '../components/common/Header';
-import MainListItem from '../components/main/MainListItem';
+import MainViewer from '../components/main/MainViewer';
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data,
 }: any) {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+
   return (
     <Layout>
       <Header />
-      <MainListItem frontmatter={frontmatter} html={html} />
+      <MainViewer frontmatter={frontmatter} html={html} />
     </Layout>
-    // <div className="blog-post-container">
-    //   <div className="blog-post">
-    //     <h1>{frontmatter.title}</h1>
-    //     <h2>{frontmatter.date}</h2>
-    //     <div
-    //       className="blog-post-content"
-    //       dangerouslySetInnerHTML={{ __html: html }}
-    //     />
-    //   </div>
-    // </div>
   );
 }
 

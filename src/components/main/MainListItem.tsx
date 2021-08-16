@@ -1,25 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from '../../lib/styles/colors';
-import { ResponsiveTemplate } from '../common/Responsive';
+import { IPost } from './hooks/usePost';
 
 interface MainListItemProps {
-  frontmatter: {
-    date: string;
-    title: string;
-    summary: string;
-    category: string;
-    tag: string;
-  };
-  html: any;
+  content: IPost;
 }
 
-function MainListItem({ frontmatter, html }: MainListItemProps) {
-  return <MainListItemTemplate>{frontmatter.title}</MainListItemTemplate>;
+function MainListItem({ content }: MainListItemProps) {
+  return (
+    <MainListItemTemplate>
+      <div>{content.title}</div>
+      <div>{content.date}</div>
+    </MainListItemTemplate>
+  );
 }
 
-const MainListItemTemplate = styled(ResponsiveTemplate)`
-  color: ${colors.white};
+const MainListItemTemplate = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export default MainListItem;

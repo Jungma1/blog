@@ -2,6 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import media from '../../lib/styles/media';
 
+type ResponsiveProps = {
+  children: React.ReactNode;
+};
+
+function Responsive({ children }: ResponsiveProps) {
+  return <ResponsiveTemplate>{children}</ResponsiveTemplate>;
+}
+
 export const ResponsiveTemplate = styled.div`
   width: 1024px;
   margin-left: auto;
@@ -18,12 +26,5 @@ export const ResponsiveTemplate = styled.div`
   }
 `;
 
-type ResponsiveProps = {
-  children: React.ReactNode;
-};
-
-function Responsive({ children }: ResponsiveProps) {
-  return <ResponsiveTemplate>{children}</ResponsiveTemplate>;
-}
 
 export default Responsive;

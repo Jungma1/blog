@@ -5,18 +5,41 @@ import colors from '../../lib/styles/colors';
 import useHeader from './hooks/useHeader';
 import { ResponsiveTemplate } from './Responsive';
 
+function Header() {
+  const { scrollY, scrollActive } = useHeader();
+
+  return (
+    <Block>
+      <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
+        <div className="header">
+          <Link to="/">JUNGMA'S BLOG</Link>
+        </div>
+        <div className="nav">
+          <div>
+            <Link to="/" activeClassName="active">
+              Main
+            </Link>
+          </div>
+          <div>
+            <Link to="/projects" activeClassName="active">
+              Projects
+            </Link>
+          </div>
+          <div>
+            <a href="https://github.com/jungma1">Github</a>
+          </div>
+        </div>
+      </HeaderTemplate>
+    </Block>
+  );
+}
+
 interface HeaderTemplateProps {
   scrollY?: number;
   scrollActive?: boolean;
 }
 
-const Block = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 10rem;
-`;
-
-const HeaderTemplate = styled(ResponsiveTemplate)<HeaderTemplateProps>`
+const HeaderTemplate = styled(ResponsiveTemplate)`
   position: fixed;
   top: 0;
   padding-top: 2rem;
@@ -24,7 +47,7 @@ const HeaderTemplate = styled(ResponsiveTemplate)<HeaderTemplateProps>`
   color: ${colors.white};
   background: ${colors.background};
   border-bottom: 3px solid ${colors.white};
-  opacity: ${props => (props.scrollActive ? 0 : 1)};
+  opacity: ${(props: HeaderTemplateProps) => (props.scrollActive ? 0 : 1)};
   transition: opacity 0.5s;
 
   .header {
@@ -56,33 +79,11 @@ const HeaderTemplate = styled(ResponsiveTemplate)<HeaderTemplateProps>`
   }
 `;
 
-function Header() {
-  const { scrollY, scrollActive } = useHeader();
 
-  return (
-    <Block>
-      <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
-        <div className="header">
-          <Link to="/">JUNGMA'S BLOG</Link>
-        </div>
-        <div className="nav">
-          <div>
-            <Link to="/" activeClassName="active">
-              Main
-            </Link>
-          </div>
-          <div>
-            <Link to="/projects" activeClassName="active">
-              Projects
-            </Link>
-          </div>
-          <div>
-            <a href="https://github.com/jungma1">Github</a>
-          </div>
-        </div>
-      </HeaderTemplate>
-    </Block>
-  );
-}
+const Block = styled.header`
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+`;
 
 export default Header;
