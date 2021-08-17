@@ -22,7 +22,7 @@ export const ResponsiveTemplate = styled.div`
     width: 375px;
   }
   ${media.xsmall} {
-    width: 320px;
+    width: 315px;
   }
 `;
 

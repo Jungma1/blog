@@ -17,9 +17,12 @@ function Layout({ children }: LayoutProps) {
 
 const GlobalStyled = createGlobalStyle`
   html, body, #root {
+    width: 100%;
     height: 100%;
     background: ${colors.background};
     font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
   }
 
   a, a:link, a:visited, a:hover, a:focus {

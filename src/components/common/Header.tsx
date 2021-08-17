@@ -39,6 +39,12 @@ interface HeaderTemplateProps {
   scrollActive?: boolean;
 }
 
+const Block = styled.header`
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+`;
+
 const HeaderTemplate = styled(ResponsiveTemplate)`
   position: fixed;
   top: 0;
@@ -65,7 +71,8 @@ const HeaderTemplate = styled(ResponsiveTemplate)`
     font-size: 1rem;
 
     div {
-      margin: 0 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
       cursor: pointer;
 
       &:hover {
@@ -77,13 +84,6 @@ const HeaderTemplate = styled(ResponsiveTemplate)`
       }
     }
   }
-`;
-
-
-const Block = styled.header`
-  display: flex;
-  justify-content: center;
-  height: 10rem;
 `;
 
 export default Header;
