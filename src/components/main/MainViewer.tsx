@@ -10,7 +10,12 @@ interface MainViewerProps {
 }
 
 function MainViewer({ frontmatter, html }: MainViewerProps) {
-  return <MainListItemTemplate>{frontmatter.title}</MainListItemTemplate>;
+  return (
+    <MainListItemTemplate>
+      {frontmatter.title}
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+    </MainListItemTemplate>
+  );
 }
 
 const MainListItemTemplate = styled(ResponsiveTemplate)`

@@ -9,9 +9,14 @@ function MainList() {
 
   return (
     <MainListTemplate>
-      {contents.map((content: IPost) => (
-        <MainListItem key={content.index} content={content} />
-      ))}
+      <LeftFrame>
+        {contents.map((content: IPost) => (
+          <MainListItem key={content.index} content={content} />
+        ))}
+      </LeftFrame>
+      <RightFrame>
+
+      </RightFrame>
     </MainListTemplate>
   );
 }
@@ -26,10 +31,19 @@ const MainListTemplate = styled(ResponsiveTemplate)`
     }
   }
 
-  display: block;
+  display: flex;
   padding-top: 5rem;
   padding-bottom: 5rem;
   animation: fadeIn 0.5s;
+`;
+
+const LeftFrame = styled.div`
+  flex: 3;
+`;
+
+const RightFrame = styled.nav`
+  flex: 1;
+  background-color: white;
 `;
 
 export default MainList;

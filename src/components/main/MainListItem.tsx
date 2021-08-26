@@ -10,35 +10,38 @@ interface MainListItemProps {
 function MainListItem({ content }: MainListItemProps) {
   return (
     <MainListItemTemplate>
-      <TitleBlock>
+      <LeftBlock>
         <div className="title">{content.title}</div>
         <div className="date">{content.date}</div>
-      </TitleBlock>
+      </LeftBlock>
+      <RightBlock>{content.summary}</RightBlock>
     </MainListItemTemplate>
   );
 }
 
 const MainListItemTemplate = styled.div`
   display: flex;
-  flex-direction: column;
   color: ${colors.white};
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 `;
 
-const TitleBlock = styled.div`
+const LeftBlock = styled.div`
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  padding-right: 1rem;
+  border-right: 2px solid;
 
   .title {
-    cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
+`;
 
-  .date {
-    
-  }
+const RightBlock = styled.div`
+  flex: 2;
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  align-self: center;
 `;
 
 export default MainListItem;
