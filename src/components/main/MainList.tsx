@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavBar from '../common/NavBar';
 import { ResponsiveTemplate } from '../common/Responsive';
 import usePost, { IPost } from './hooks/usePost';
 import MainListItem from './MainListItem';
@@ -15,7 +16,7 @@ function MainList() {
         ))}
       </LeftFrame>
       <RightFrame>
-
+          <NavBar />
       </RightFrame>
     </MainListTemplate>
   );
@@ -41,9 +42,8 @@ const LeftFrame = styled.div`
   flex: 3;
 `;
 
-const RightFrame = styled.nav`
+const RightFrame = styled.div`
   flex: 1;
-  background-color: white;
 `;
 
 export default MainList;

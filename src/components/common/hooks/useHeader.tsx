@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 
+export interface IScroll {
+  scrollY: number;
+  scrollActive?: boolean;
+}
+
 export default function useHeader() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollActive, setScrollActive] = useState(false);
