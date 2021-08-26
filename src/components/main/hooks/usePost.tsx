@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 export interface IPost {
-  index: string;
+  index: number;
   slug: string;
   date: string;
   title: string;
