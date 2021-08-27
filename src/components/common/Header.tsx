@@ -41,6 +41,7 @@ const Block = styled.header`
 `;
 
 const HeaderTemplate = styled(ResponsiveTemplate)`
+  z-index: 1;
   position: fixed;
   top: 0;
   padding-top: 2rem;
