@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
@@ -9,39 +10,50 @@ interface MainListItemProps {
 
 function MainListItem({ content }: MainListItemProps) {
   return (
-    <MainListItemTemplate>
-      <LeftBlock>
-        <div className="title">{content.title}</div>
-        <div className="date">{content.date}</div>
-      </LeftBlock>
-      <RightBlock>{content.summary}</RightBlock>
-    </MainListItemTemplate>
+    <Link to={content.slug}>
+      <MainListItemTemplate>
+        <TopBlock>
+          <div className="title">{content.title}</div>
+          <div className="date">{content.date}</div>
+        </TopBlock>
+        <BottomBlock>
+          <div className="summary">{content.summary}</div>
+        </BottomBlock>
+      </MainListItemTemplate>
+    </Link>
   );
 }
 
 const MainListItemTemplate = styled.div`
   display: flex;
+  flex-direction: column;
   color: ${colors.white};
   margin-bottom: 5rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-left: 2px solid ${colors.white};
+
+  &:hover {
+    color: ${colors.whiteToggle};
+  }
 `;
 
-const LeftBlock = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-right: 1rem;
-  border-right: 2px solid;
+const TopBlock = styled.div`
+  cursor: pointer;
+  padding-bottom: 2rem;
 
   .title {
     font-size: 1.5rem;
   }
+
+  .date {
+    text-align: right;
+  }
 `;
 
-const RightBlock = styled.div`
-  flex: 2;
-  padding-left: 1rem;
+const BottomBlock = styled.div`
   font-size: 1.4rem;
-  align-self: center;
+  border-bottom: 1px solid;
 `;
 
 export default MainListItem;
