@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-export interface IPost {
+export interface Post {
   index: number;
   slug: string;
   date: string;
@@ -12,7 +12,7 @@ export interface IPost {
 }
 
 export default function usePost() {
-  const [contents, setContents] = useState<IPost[]>([]);
+  const [contents, setContents] = useState<Post[]>([]);
 
   const data = useStaticQuery(graphql`
     query {

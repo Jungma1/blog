@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import useHeader, { IScroll } from './hooks/useHeader';
+import useHeader, { Scroll } from './hooks/useHeader';
 import { ResponsiveTemplate } from './Responsive';
 
 function Header() {
@@ -49,7 +49,7 @@ const HeaderTemplate = styled(ResponsiveTemplate)`
   color: ${colors.white};
   background: ${colors.background};
   border-bottom: 3px solid ${colors.white};
-  opacity: ${(props: IScroll) => (props.scrollActive ? 0 : 1)};
+  opacity: ${(props: Scroll) => (props.scrollActive ? 0 : 1)};
   transition: opacity 0.5s;
 
   .header {

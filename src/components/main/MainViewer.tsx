@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import { ResponsiveTemplate } from '../common/Responsive';
-import { IPost } from './hooks/usePost';
+import { Post } from './hooks/usePost';
 
 interface MainViewerProps {
-  frontmatter: IPost;
+  frontmatter: Post;
   html: any;
 }
 

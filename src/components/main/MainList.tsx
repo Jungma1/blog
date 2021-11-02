@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import media from '../../lib/styles/media';
 import NavBar from '../common/NavBar';
 import { ResponsiveTemplate } from '../common/Responsive';
-import usePost, { IPost } from './hooks/usePost';
+import usePost, { Post } from './hooks/usePost';
 import MainListItem from './MainListItem';
 
 function MainList() {
@@ -11,12 +12,12 @@ function MainList() {
   return (
     <MainListTemplate>
       <LeftFrame>
-        {contents.map((content: IPost) => (
+        {contents.map((content: Post) => (
           <MainListItem key={content.index} content={content} />
         ))}
       </LeftFrame>
       <RightFrame>
-          <NavBar />
+        <NavBar />
       </RightFrame>
     </MainListTemplate>
   );
@@ -35,6 +36,8 @@ const MainListTemplate = styled(ResponsiveTemplate)`
   display: flex;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   animation: fadeIn 0.5s;
 `;
 
@@ -44,6 +47,10 @@ const LeftFrame = styled.div`
 
 const RightFrame = styled.div`
   flex: 1;
+
+  ${media.medium} {
+    display: none;
+  }
 `;
 
 export default MainList;

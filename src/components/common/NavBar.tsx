@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import media from '../../lib/styles/media';
-import useHeader, { IScroll } from './hooks/useHeader';
+import useHeader, { Scroll } from './hooks/useHeader';
 
 function NavBar() {
   const { scrollY } = useHeader();
@@ -19,14 +18,10 @@ function NavBar() {
 }
 
 const NavBarTemplate = styled.div`
-  position: ${(props: IScroll) => (props.scrollY < 410) ? '' : 'fixed'};
-  top: ${(props: IScroll) => (props.scrollY < 410) ? 0 : '190px'};
+  position: ${(props: Scroll) => (props.scrollY < 410) ? '' : 'fixed'};
+  top: ${(props: Scroll) => (props.scrollY < 410) ? 0 : '190px'};
   color: ${colors.white};
-  padding: 2rem;
-
-  ${media.medium} {
-    opacity: 0;
-  }
+  padding: 1rem;
 `;
 
 export default NavBar

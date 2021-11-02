@@ -2,10 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import { IPost } from './hooks/usePost';
+import { Post } from './hooks/usePost';
 
 interface MainListItemProps {
-  content: IPost;
+  content: Post;
 }
 
 function MainListItem({ content }: MainListItemProps) {
@@ -14,10 +14,10 @@ function MainListItem({ content }: MainListItemProps) {
       <MainListItemTemplate>
         <TopBlock>
           <div className="title">{content.title}</div>
-          <div className="date">{content.date}</div>
         </TopBlock>
         <BottomBlock>
-          <div className="summary">{content.summary}</div>
+          <div className="category">{content.category}</div>
+          <div className="date">{content.date}</div>
         </BottomBlock>
       </MainListItemTemplate>
     </Link>
@@ -27,14 +27,15 @@ function MainListItem({ content }: MainListItemProps) {
 const MainListItemTemplate = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${colors.white};
+  color: ${colors.beforeWhite};
   margin-bottom: 5rem;
   cursor: pointer;
   padding: 1rem;
-  border-left: 2px solid ${colors.white};
+  border-left: 2px solid ${colors.beforeWhite};
 
   &:hover {
-    color: ${colors.whiteToggle};
+    font-weight: bold;
+    color: ${colors.white};
   }
 `;
 
@@ -45,15 +46,16 @@ const TopBlock = styled.div`
   .title {
     font-size: 1.5rem;
   }
-
-  .date {
-    text-align: right;
-  }
 `;
 
 const BottomBlock = styled.div`
-  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
   border-bottom: 1px solid;
+  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 export default MainListItem;

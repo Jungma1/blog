@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export interface IScroll {
+export interface Scroll {
   scrollY: number;
   scrollActive?: boolean;
 }
