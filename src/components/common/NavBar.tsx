@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import useHeader, { Scroll } from './hooks/useHeader';
+import useScroll, { Scroll } from './hooks/useScroll';
 
 function NavBar() {
-  const { scrollY } = useHeader();
+  const { scrollY } = useScroll();
 
   return (
     <NavBarTemplate scrollY={scrollY}>

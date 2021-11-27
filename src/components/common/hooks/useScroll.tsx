@@ -5,7 +5,7 @@ export interface Scroll {
   scrollActive?: boolean;
 }
 
-export default function useHeader() {
+export default function useScroll() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollActive, setScrollActive] = useState(false);
 

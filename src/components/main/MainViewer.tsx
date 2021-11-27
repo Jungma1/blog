@@ -18,8 +18,10 @@ function MainViewer({ frontmatter, html }: MainViewerProps) {
   );
 }
 
-const MainListItemTemplate = styled(ResponsiveTemplate)`
+const MainListItemTemplate = styled.div`
   color: ${colors.white};
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 `;
 
 export default MainViewer;
