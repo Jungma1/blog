@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import { ResponsiveTemplate } from '../common/Responsive';
 import { Post } from './hooks/usePost';
 
 interface MainViewerProps {
@@ -12,7 +11,8 @@ interface MainViewerProps {
 function MainViewer({ frontmatter, html }: MainViewerProps) {
   return (
     <MainListItemTemplate>
-      {frontmatter.title}
+      <div>{frontmatter.title}</div>
+      <div>{frontmatter.summary}</div>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </MainListItemTemplate>
   );

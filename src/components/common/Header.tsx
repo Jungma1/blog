@@ -3,33 +3,36 @@ import Link from 'gatsby-link';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import useScroll, { Scroll } from './hooks/useScroll';
+import Responsive from './Responsive';
 
 function Header() {
   const { scrollY, scrollActive } = useScroll();
 
   return (
-    <Block>
-      <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
-        <div className="header">
-          <Link to="/">JUNGMA'S BLOG</Link>
-        </div>
-        <div className="nav">
-          <div>
-            <Link to="/" activeClassName="active">
-              Main
-            </Link>
+    <Responsive>
+      <Block>
+        <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
+          <div className="header">
+            <Link to="/">JUNGMA'S BLOG</Link>
           </div>
-          <div>
-            <Link to="/projects" activeClassName="active">
-              Projects
-            </Link>
+          <div className="nav">
+            <div>
+              <Link to="/" activeClassName="active">
+                Main
+              </Link>
+            </div>
+            <div>
+              <Link to="/projects" activeClassName="active">
+                Projects
+              </Link>
+            </div>
+            <div>
+              <a href="https://github.com/jungma1">Github</a>
+            </div>
           </div>
-          <div>
-            <a href="https://github.com/jungma1">Github</a>
-          </div>
-        </div>
-      </HeaderTemplate>
-    </Block>
+        </HeaderTemplate>
+      </Block>
+    </Responsive>
   );
 }
 
