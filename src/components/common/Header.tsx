@@ -12,10 +12,10 @@ function Header() {
     <Responsive>
       <Block>
         <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
-          <div className="header">
+          <TitleBlock>
             <Link to="/">JUNGMA'S BLOG</Link>
-          </div>
-          <div className="nav">
+          </TitleBlock>
+          <NavBlock>
             <div>
               <Link to="/" activeClassName="active">
                 Main
@@ -29,7 +29,7 @@ function Header() {
             <div>
               <a href="https://github.com/jungma1">Github</a>
             </div>
-          </div>
+          </NavBlock>
         </HeaderTemplate>
       </Block>
     </Responsive>
@@ -53,33 +53,33 @@ const HeaderTemplate = styled.div`
   background: ${colors.background};
   opacity: ${(props: Scroll) => (props.scrollActive ? 0 : 1)};
   transition: opacity 0.5s;
+`;
 
-  .header {
-    display: flex;
-    font-size: 2rem;
-    font-weight: bold;
-    justify-content: center;
+const TitleBlock = styled.div`
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+const NavBlock = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  font-size: 1rem;
+
+  div {
+    margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
-  }
 
-  .nav {
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
-    font-size: 1rem;
+    &:hover {
+      color: ${colors.whiteToggle};
+    }
 
-    div {
-      margin-left: 1rem;
-      margin-right: 1rem;
-      cursor: pointer;
-
-      &:hover {
-        color: ${colors.whiteToggle};
-      }
-
-      .active {
-        color: ${colors.whiteToggle};
-      }
+    .active {
+      color: ${colors.whiteToggle};
     }
   }
 `;
