@@ -30,10 +30,17 @@ const MainListItemTemplate = styled.div`
   cursor: pointer;
   padding: 1rem;
   border-left: 2px solid ${colors.beforeWhite};
+  font-weight: bold;
 
   &:hover {
-    font-weight: bold;
+    transform: translateY(-10px);
     color: ${colors.white};
+    transition: color 0.5s, transform 0.5s;
+  }
+
+  &:not(:hover) {
+    transition: color 0.5s;
+    transition: color 0.5s, transform 0.5s;
   }
 `;
 
