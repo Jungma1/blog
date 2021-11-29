@@ -1,11 +1,24 @@
-import { navigate } from 'gatsby-link';
 import React from 'react';
 import styled from 'styled-components';
+import colors from '../../lib/styles/colors';
+import { AiFillHome as HomeIcon } from 'react-icons/ai';
+import { BsFillShareFill as ShareIcon } from 'react-icons/bs';
+import { navigate } from 'gatsby-link';
+import useScroll, { Scroll } from './hooks/useScroll';
 
 function SideBar() {
+  const { scrollY } = useScroll();
+
   return (
     <SideBarTemplate>
-      <div onClick={() => navigate('/')}>홈으로</div>
+      <SideBox scrollY={scrollY}>
+        <div onClick={() => navigate('/')}>
+          <HomeIcon size={32} />
+        </div>
+        <div onClick={() => navigator.clipboard.writeText(window.location.href)}>
+          <ShareIcon size={32} />
+        </div>
+      </SideBox>
     </SideBarTemplate>
   );
 }
@@ -13,7 +26,26 @@ function SideBar() {
 const SideBarTemplate = styled.div`
   position: absolute;
   left: -10%;
-  cursor: pointer;
+`;
+
+const SideBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0.125rem solid ${colors.white};
+  border-radius: 2rem;
+  padding: 0.5rem;
+  position: ${({ scrollY }: Scroll) => (scrollY > 0 ? 'fixed' : '')};
+
+  div {
+    text-align: center;
+    cursor: pointer;
+
+    :nth-child(1) {
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 export default SideBar;

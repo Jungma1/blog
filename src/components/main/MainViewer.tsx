@@ -37,14 +37,13 @@ const Block = styled.div`
 
 const MainListItemTemplate = styled.div`
   color: ${colors.white};
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 `;
 
 const TitleBlock = styled.div`
-  margin-top: 4rem;
   margin-bottom: 4rem;
   border-bottom: 2px solid ${colors.white};
   font-weight: bold;

@@ -33,7 +33,7 @@ const MainListItemTemplate = styled.div`
   font-weight: bold;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateX(10px);
     color: ${colors.white};
     transition: color 0.5s, transform 0.5s;
   }
