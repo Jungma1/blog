@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/common/Layout';
-import Header from '../components/common/Header';
 import MainViewer from '../components/main/MainViewer';
 
 export default function Template({ data }: any) {
@@ -10,7 +9,6 @@ export default function Template({ data }: any) {
 
   return (
     <Layout>
-      <Header />
       <MainViewer frontmatter={frontmatter} html={html} />
     </Layout>
   );
