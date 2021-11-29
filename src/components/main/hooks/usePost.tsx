@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 export interface Post {
-  index: number;
   slug: string;
   date: string;
   title: string;
@@ -21,7 +20,6 @@ export default function usePost() {
           node {
             html
             frontmatter {
-              index
               slug
               date
               title

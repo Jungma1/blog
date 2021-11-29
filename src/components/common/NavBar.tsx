@@ -9,11 +9,7 @@ function NavBar() {
   return (
     <Block>
       <NavBarTemplate scrollY={scrollY}>
-        카테고리 <br />
-        개발 <br />
-        잡담 <br />
-        이야기 <br />
-        누리꾼 <br />
+        임시
       </NavBarTemplate>
     </Block>
   );

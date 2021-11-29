@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Layout from '../components/common/Layout';
 import Header from '../components/common/Header';
 import MainViewer from '../components/main/MainViewer';
-import Responsive from '../components/common/Responsive';
 
 export default function Template({ data }: any) {
   const { markdownRemark } = data;
@@ -11,10 +10,8 @@ export default function Template({ data }: any) {
 
   return (
     <Layout>
-      <Responsive>
-        <Header />
-        <MainViewer frontmatter={frontmatter} html={html} />
-      </Responsive>
+      <Header />
+      <MainViewer frontmatter={frontmatter} html={html} />
     </Layout>
   );
 }

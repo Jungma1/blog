@@ -6,9 +6,7 @@ import Responsive from '../components/common/Responsive';
 function ProjectsPage() {
   return (
     <Layout>
-      <Responsive>
-        <Header />
-      </Responsive>
+      <Header />
     </Layout>
   );
 }

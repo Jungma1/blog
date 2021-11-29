@@ -15,7 +15,7 @@ function MainList() {
       </Block>
       <MainListTemplate>
         {contents.map((content: Post) => (
-          <MainListItem key={content.index} content={content} />
+          <MainListItem key={content.title} content={content} />
         ))}
       </MainListTemplate>
     </Responsive>

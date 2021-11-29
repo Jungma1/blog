@@ -1,8 +1,8 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import { Post } from './hooks/usePost';
+import { navigate } from 'gatsby-link';
 
 interface MainListItemProps {
   content: Post;
@@ -10,17 +10,15 @@ interface MainListItemProps {
 
 function MainListItem({ content }: MainListItemProps) {
   return (
-    <Link to={content.slug}>
-      <MainListItemTemplate>
-        <TopBlock>
-          <div className="title">{content.title}</div>
-        </TopBlock>
-        <BottomBlock>
-          <div className="category">{content.category}</div>
-          <div className="date">{content.date}</div>
-        </BottomBlock>
-      </MainListItemTemplate>
-    </Link>
+    <MainListItemTemplate onClick={() => navigate(content.slug)}>
+      <TopBlock>
+        <div className="title">{content.title}</div>
+      </TopBlock>
+      <BottomBlock>
+        <div className="category">{content.category}</div>
+        <div className="date">{content.date}</div>
+      </BottomBlock>
+    </MainListItemTemplate>
   );
 }
 
