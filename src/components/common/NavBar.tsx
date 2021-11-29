@@ -8,9 +8,7 @@ function NavBar() {
 
   return (
     <Block>
-      <NavBarTemplate scrollY={scrollY}>
-        임시
-      </NavBarTemplate>
+      <NavBarTemplate scrollY={scrollY}>임시</NavBarTemplate>
     </Block>
   );
 }

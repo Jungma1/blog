@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mediaQuery } from '../../lib/styles/media';
 import NavBar from '../common/NavBar';
 import Responsive from '../common/Responsive';
 import usePost, { Post } from './hooks/usePost';
@@ -25,6 +26,10 @@ function MainList() {
 const Block = styled.div`
   margin-top: 1rem;
   position: relative;
+
+  ${mediaQuery(1439)} {
+    display: none;
+  }
 `;
 
 const MainListTemplate = styled.div`
