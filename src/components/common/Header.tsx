@@ -27,7 +27,9 @@ function Header() {
               </Link>
             </div>
             <div>
-              <a href="https://github.com/jungma1">Github</a>
+              <a href="https://github.com/jungma1" target="_blank">
+                Github
+              </a>
             </div>
           </NavBlock>
         </HeaderTemplate>

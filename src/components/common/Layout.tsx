@@ -18,7 +18,7 @@ function Layout({ children }: LayoutProps) {
 const GlobalStyled = createGlobalStyle`
   html, body, #root {
     width: 100%;
-    height: 100%;
+    height: auto;
     background: ${colors.background};
     font-family: 'Roboto';
     margin: 0;
@@ -29,6 +29,15 @@ const GlobalStyled = createGlobalStyle`
 		text-decoration: none;
 		color: unset;
 	}
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default Layout;

@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
+import { mediaQuery } from '../../lib/styles/media';
 import Responsive from '../common/Responsive';
 import SideBar from '../common/SideBar';
+import Utterances from '../common/Utterances';
 import { Post } from './hooks/usePost';
 
 interface MainViewerProps {
@@ -25,6 +27,7 @@ function MainViewer({ frontmatter, html }: MainViewerProps) {
           <SideBar />
         </Block>
         <ContentBlock dangerouslySetInnerHTML={{ __html: html }}></ContentBlock>
+        <Utterances />
       </MainListItemTemplate>
     </Responsive>
   );
@@ -33,9 +36,14 @@ function MainViewer({ frontmatter, html }: MainViewerProps) {
 const Block = styled.div`
   position: relative;
   margin-top: 1rem;
+
+  ${mediaQuery(1439)} {
+    display: none;
+  }
 `;
 
 const MainListItemTemplate = styled.div`
+  animation: fadeIn 0.3s;
   color: ${colors.white};
   margin-top: 5rem;
   margin-bottom: 5rem;

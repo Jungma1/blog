@@ -36,22 +36,13 @@ function MainProfile() {
 }
 
 const ProfileTemplate = styled.div`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
   ${media.medium} {
     display: block;
   }
 
   display: flex;
   justify-content: center;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.3s;
   align-items: center;
   padding-top: 5rem;
   padding-bottom: 5rem;

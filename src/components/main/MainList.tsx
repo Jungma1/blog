@@ -33,16 +33,7 @@ const Block = styled.div`
 `;
 
 const MainListTemplate = styled.div`
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.3s;
   padding-top: 5rem;
   padding-bottom: 5rem;
 `;

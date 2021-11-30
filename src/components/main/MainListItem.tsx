@@ -59,8 +59,8 @@ const BottomBlock = styled.div`
   justify-content: space-between;
   font-size: 1rem;
   border-bottom: 1px solid;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 export default MainListItem;
