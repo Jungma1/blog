@@ -33,7 +33,8 @@ const SideBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 0.125rem solid ${colors.white};
+  color: ${colors.beforeWhite};
+  border: 0.125rem solid ${colors.beforeWhite};
   border-radius: 2rem;
   padding: 0.5rem;
   position: ${({ scrollY }: Scroll) => (scrollY > 0 ? 'fixed' : '')};
@@ -41,6 +42,15 @@ const SideBox = styled.div`
   div {
     text-align: center;
     cursor: pointer;
+
+    :hover {
+      color: ${colors.whiteToggle};
+      transition: color 0.5s;
+    }
+    
+    :not(:hover) {
+      transition: color 0.5s;
+    }
 
     :nth-child(1) {
       margin-bottom: 1rem;
