@@ -15,7 +15,7 @@ interface MainViewerProps {
 function MainViewer({ frontmatter, html }: MainViewerProps) {
   return (
     <Responsive>
-      <MainListItemTemplate>
+      <MainViewerTemplate>
         <TitleBlock>
           <h1>{frontmatter.title}</h1>
           <div>
@@ -28,7 +28,7 @@ function MainViewer({ frontmatter, html }: MainViewerProps) {
         </Block>
         <ContentBlock dangerouslySetInnerHTML={{ __html: html }}></ContentBlock>
         <Utterances />
-      </MainListItemTemplate>
+      </MainViewerTemplate>
     </Responsive>
   );
 }
@@ -42,7 +42,7 @@ const Block = styled.div`
   }
 `;
 
-const MainListItemTemplate = styled.div`
+const MainViewerTemplate = styled.div`
   animation: fadeIn 0.3s;
   color: ${colors.white};
   margin-top: 5rem;
