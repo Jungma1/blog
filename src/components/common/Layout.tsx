@@ -19,7 +19,7 @@ const GlobalStyled = createGlobalStyle`
   html, body, #root {
     width: 100%;
     height: auto;
-    background: ${colors.background};
+    background: ${colors.black};
     font-family: 'Roboto';
     margin: 0;
     padding: 0;

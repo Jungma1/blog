@@ -8,7 +8,12 @@ export interface Post {
   title: string;
   summary: string;
   category: string;
-  tag: string[];
+  tags: Tag[];
+}
+
+export interface Tag {
+  title: string;
+  color: string;
 }
 
 export default function usePost() {
@@ -26,7 +31,7 @@ export default function usePost() {
               title
               summary
               category
-              tag
+              tags
             }
           }
         }
@@ -35,13 +40,26 @@ export default function usePost() {
   `);
 
   useEffect(() => {
-    setContents(
-      data.allMarkdownRemark.edges.map((edge: any) => {
+    const frontmatter = data.allMarkdownRemark.edges
+      .map((edge: any) => {
         return {
           ...edge.node.frontmatter,
         };
       })
-    );
+      .map((fm: any) => {
+        return {
+          ...fm,
+          tags: fm.tags.map((tag: string) => {
+            return {
+              title: tag,
+              color: 'testColor',
+            } as Tag;
+          }),
+        };
+      });
+
+    console.log(frontmatter);
+    setContents(frontmatter);
   }, []);
 
   return { contents };

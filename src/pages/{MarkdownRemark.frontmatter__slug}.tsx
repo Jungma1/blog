@@ -24,6 +24,7 @@ export const pageQuery = graphql`
         title
         summary
         category
+        tags
       }
     }
   }

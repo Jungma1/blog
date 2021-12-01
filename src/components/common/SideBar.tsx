@@ -33,8 +33,8 @@ const SideBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${colors.beforeWhite};
-  border: 0.125rem solid ${colors.beforeWhite};
+  color: ${colors.lightWhite};
+  border: 0.125rem solid ${colors.lightWhite};
   border-radius: 2rem;
   padding: 0.5rem;
   position: ${({ scrollY }: Scroll) => (scrollY > 0 ? 'fixed' : '')};

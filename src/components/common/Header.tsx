@@ -52,7 +52,7 @@ const HeaderTemplate = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
   color: ${colors.white};
-  background: ${colors.background};
+  background: ${colors.black};
   opacity: ${(props: Scroll) => (props.scrollActive ? 0 : 1)};
   transition: opacity 0.5s;
 `;

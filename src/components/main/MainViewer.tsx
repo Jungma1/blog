@@ -65,7 +65,7 @@ const TitleBlock = styled.div`
     justify-content: flex-start;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: ${colors.beforeWhite};
+    color: ${colors.lightWhite};
 
     span {
       margin-right: 1rem;

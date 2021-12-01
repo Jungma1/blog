@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import { Post } from './hooks/usePost';
 import { navigate } from 'gatsby-link';
+import Tags from '../common/Tags';
 
 interface MainListItemProps {
   content: Post;
@@ -15,12 +16,8 @@ function MainListItem({ content }: MainListItemProps) {
         <div>{content.title}</div>
       </TopBlock>
       <BottomBlock>
-        <div>{content.date}</div>
-        <div>
-          {content.tag.map(value => (
-            <Tag key={value}>{value}</Tag>
-          ))}
-        </div>
+        <div className='date'>{content.date}</div>
+        <Tags tags={content.tags} />
       </BottomBlock>
     </MainListItemTemplate>
   );
@@ -29,7 +26,7 @@ function MainListItem({ content }: MainListItemProps) {
 const MainListItemTemplate = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${colors.beforeWhite};
+  color: ${colors.lightWhite};
   cursor: pointer;
   padding: 1rem;
   font-weight: bold;
@@ -37,7 +34,7 @@ const MainListItemTemplate = styled.div`
   border-bottom: 0.125rem solid;
 
   :hover {
-    transform: translateX(-15px);
+    transform: translateY(-15px);
     color: ${colors.white};
     transition: color 0.5s, transform 0.5s;
   }
@@ -59,19 +56,15 @@ const TopBlock = styled.div`
 
 const BottomBlock = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   font-size: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
 
-  div {
-    margin-bottom: 0.25rem;
+  .date {
+    margin-bottom: 0.5rem;
   }
-`;
-
-const Tag = styled.span`
-  margin-left: 1rem;
 `;
 
 export default MainListItem;
