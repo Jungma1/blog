@@ -17,8 +17,9 @@ function MainListItem({ content }: MainListItemProps) {
       <BottomBlock>
         <div>{content.date}</div>
         <div>
-          <span>React</span>
-          <span>Typescript</span>
+          {content.tag.map(value => (
+            <Tag key={value}>{value}</Tag>
+          ))}
         </div>
       </BottomBlock>
     </MainListItemTemplate>
@@ -29,13 +30,14 @@ const MainListItemTemplate = styled.div`
   display: flex;
   flex-direction: column;
   color: ${colors.beforeWhite};
-  margin-bottom: 5rem;
   cursor: pointer;
   padding: 1rem;
   font-weight: bold;
+  margin-bottom: 4rem;
+  border-bottom: 0.125rem solid;
 
   :hover {
-    transform: translateX(10px);
+    transform: translateX(-15px);
     color: ${colors.white};
     transition: color 0.5s, transform 0.5s;
   }
@@ -57,21 +59,19 @@ const TopBlock = styled.div`
 
 const BottomBlock = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   font-size: 1rem;
-  border-bottom: 1px solid;
   padding-left: 1rem;
   padding-right: 1rem;
 
   div {
     margin-bottom: 0.25rem;
   }
+`;
 
-  span {
-    padding: 0.125rem;
-    margin-right: 1rem;
-  }
+const Tag = styled.span`
+  margin-left: 1rem;
 `;
 
 export default MainListItem;

@@ -12,7 +12,7 @@ function MainList() {
   return (
     <Responsive>
       <Block>
-        <NavBar />
+        {/* <NavBar /> */}
       </Block>
       <MainListTemplate>
         {contents.map((content: Post) => (
@@ -33,9 +33,11 @@ const Block = styled.div`
 `;
 
 const MainListTemplate = styled.div`
+  display: flex;
+  flex-direction: column;
   animation: fadeIn 0.3s;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 `;
 
 export default MainList;

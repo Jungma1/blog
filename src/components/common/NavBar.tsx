@@ -17,12 +17,11 @@ const Block = styled.div`
   width: 240px;
   position: absolute;
   left: 100%;
-  padding-top: 5rem;
 `;
 
 const NavBarTemplate = styled.div`
   color: ${colors.white};
-  margin-left: 1rem;
+  padding: 1rem;
   position: ${({ scrollY }: Scroll) => (scrollY >= 410 ? 'fixed' : '')};
   top: ${({ scrollY }: Scroll) => (scrollY >= 410 ? '210px' : '0px')};
 `;

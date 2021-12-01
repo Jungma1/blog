@@ -1,4 +1,4 @@
-import React, { createRef, useLayoutEffect } from 'react';
+import React, { createRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 function Utterances() {
@@ -7,7 +7,7 @@ function Utterances() {
   const repo = 'Jungma1/blog-gatsby';
   const theme = 'photon-dark';
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const utterances = document.createElement('script');
 
     const attributes = {

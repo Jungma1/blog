@@ -8,6 +8,7 @@ export interface Post {
   title: string;
   summary: string;
   category: string;
+  tag: string[];
 }
 
 export default function usePost() {
@@ -25,6 +26,7 @@ export default function usePost() {
               title
               summary
               category
+              tag
             }
           }
         }
