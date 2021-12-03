@@ -12,12 +12,19 @@ export interface Post {
 }
 
 export interface Tag {
-  title: string;
+  name: string;
   color: string;
 }
 
+type TagKeys = 'React' | 'Typescript' | 'Blog' | 'Test';
+
+type TagPalette = {
+  [key in TagKeys]: string;
+};
+
 export default function usePost() {
   const [contents, setContents] = useState<Post[]>([]);
+  const palette: TagPalette = { React: 'blue', Typescript: 'yellow', Blog: 'green', Test: 'gray' };
 
   const data = useStaticQuery(graphql`
     query {
@@ -49,16 +56,15 @@ export default function usePost() {
       .map((fm: any) => {
         return {
           ...fm,
-          tags: fm.tags.map((tag: string) => {
+          tags: fm.tags.map((tag: TagKeys) => {
             return {
-              title: tag,
-              color: 'testColor',
-            } as Tag;
+              name: tag,
+              color: palette[tag] ? palette[tag] : 'none',
+            };
           }),
         };
       });
 
-    console.log(frontmatter);
     setContents(frontmatter);
   }, []);
 

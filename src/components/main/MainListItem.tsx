@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import { Post } from './hooks/usePost';
 import { navigate } from 'gatsby-link';
-import Tags from '../common/Tags';
+import Tags from './Tags';
 
 interface MainListItemProps {
   content: Post;
