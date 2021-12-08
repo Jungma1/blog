@@ -1,10 +1,10 @@
 import React from 'react'
-import MainProfile from '../main/MainProfile'
+import Profile from './Profile'
 
 function Project() {
   return (
     <>
-      <MainProfile />
+      <Profile />
     </>
   )
 }

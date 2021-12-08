@@ -2,10 +2,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import media from '../../lib/styles/media';
 import Responsive from '../common/Responsive';
 
-function MainProfile() {
+function Profile() {
   return (
     <Responsive>
       <ProfileTemplate>
@@ -70,4 +69,4 @@ const ImageBlock = styled.img`
   padding-right: 0.5rem;
 `;
 
-export default MainProfile;
+export default Profile;
