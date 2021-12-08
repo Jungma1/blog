@@ -36,8 +36,8 @@ const MainListTemplate = styled.div`
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.3s;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 `;
 
 export default MainList;

@@ -5,7 +5,6 @@ import MainProfile from './MainProfile';
 function Main() {
   return (
     <>
-      <MainProfile />
       <MainList />
     </>
   );
