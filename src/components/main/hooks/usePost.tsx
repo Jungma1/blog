@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import colors from '../../../lib/styles/colors';
 
 export interface Post {
   slug: string;
@@ -24,7 +25,12 @@ type TagPalette = {
 
 export default function usePost() {
   const [contents, setContents] = useState<Post[]>([]);
-  const palette: TagPalette = { React: 'blue', Typescript: 'yellow', Blog: 'green', Test: 'gray' };
+  const palette: TagPalette = {
+    React: `${colors.tagReact}`,
+    Typescript: `${colors.tagTypescript}`,
+    Blog: `${colors.tagBlog}`,
+    Test: 'gray',
+  };
 
   const data = useStaticQuery(graphql`
     query {

@@ -40,7 +40,6 @@ const MainListItemTemplate = styled.div`
   }
 
   :not(:hover) {
-    transition: color 0.5s;
     transition: color 0.5s, transform 0.5s;
   }
 `;
@@ -63,7 +62,7 @@ const BottomBlock = styled.div`
   padding-right: 1rem;
 
   .date {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 `;
 
