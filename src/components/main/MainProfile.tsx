@@ -9,10 +9,10 @@ function MainProfile() {
   return (
     <Responsive>
       <ProfileTemplate>
-        <LeftBlock>
+        <TopBlock>
           <StaticImage className="avatar" src="../../images/avatar.jpg" alt="avatar" />
-        </LeftBlock>
-        <RightBlock>
+        </TopBlock>
+        <BottomBlock>
           <div>안녕하세요! 프론트엔드 개발자 '민병준' 입니다!</div>
           <br />
           <div>끊임없이 변화하는 기술들에 관심이 많으며, 최신 트렌드에 맞춰 코딩하는 것을 좋아합니다!</div>
@@ -29,34 +29,23 @@ function MainProfile() {
             src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB&color=gray"
             alt="react"
           />
-        </RightBlock>
+        </BottomBlock>
       </ProfileTemplate>
     </Responsive>
   );
 }
 
 const ProfileTemplate = styled.div`
-  ${media.medium} {
-    display: block;
-  }
-
   display: flex;
+  flex-direction: column;
   justify-content: center;
   animation: fadeIn 0.3s;
   align-items: center;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 `;
 
-const LeftBlock = styled.div`
-  ${media.medium} {
-    flex: none;
-    margin-right: auto;
-  }
-
-  text-align: center;
-  margin-right: 2rem;
-
+const TopBlock = styled.div`
   .avatar {
     margin-left: auto;
     margin-right: auto;
@@ -68,12 +57,9 @@ const LeftBlock = styled.div`
   }
 `;
 
-const RightBlock = styled.div`
-  ${media.medium} {
-    flex: none;
-    text-align: center;
-    margin-top: 2rem;
-  }
+const BottomBlock = styled.div`
+  text-align: center;
+  margin-top: 2rem;
 
   font-size: 1.125rem;
   font-weight: bold;
