@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/common/Layout';
 import MainViewer from '../components/main/MainViewer';
+import { Helmet } from 'react-helmet';
 
 export default function Template({ data }: any) {
   const { markdownRemark } = data;
@@ -9,6 +10,11 @@ export default function Template({ data }: any) {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{frontmatter.title}</title>
+        <meta name="description" content={frontmatter.summary} />
+        <meta name="keywords" content={frontmatter.tags.join(', ')} />
+      </Helmet>
       <MainViewer frontmatter={frontmatter} html={html} />
     </Layout>
   );

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/react-helmet": "^6.1.4",
     "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.11.1",
     "gatsby-link": "^3.11.0",
