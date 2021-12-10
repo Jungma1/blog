@@ -1,1 +1,1 @@
-# 🌱 blog-gatsby
+# 🌱 blog
