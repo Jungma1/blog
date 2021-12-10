@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function Utterances() {
   const ref = createRef<HTMLDivElement>();
   const src = 'https://utteranc.es/client.js';
-  const repo = 'Jungma1/blog-gatsby';
+  const repo = 'Jungma1/blog';
   const theme = 'photon-dark';
 
   useLayoutEffect(() => {
