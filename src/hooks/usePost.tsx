@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import colors from '../../../lib/styles/colors';
+import colors from '../lib/styles/colors';
 
 export interface Post {
   slug: string;

@@ -5,7 +5,7 @@ import { mediaQuery } from '../../lib/styles/media';
 import Responsive from '../common/Responsive';
 import SideBar from '../common/SideBar';
 import Utterances from '../common/Utterances';
-import { Post } from './hooks/usePost';
+import { Post } from '../../hooks/usePost';
 import Img from 'gatsby-image';
 
 interface MainViewerProps {

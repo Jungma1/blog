@@ -4,7 +4,7 @@ import colors from '../../lib/styles/colors';
 import { AiFillHome as HomeIcon } from 'react-icons/ai';
 import { BsFillShareFill as ShareIcon } from 'react-icons/bs';
 import { navigate } from 'gatsby-link';
-import useScroll, { Scroll } from './hooks/useScroll';
+import useScroll, { Scroll } from '../../hooks/useScroll';
 
 function SideBar() {
   const { scrollY } = useScroll();

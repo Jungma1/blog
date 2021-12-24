@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import useScroll, { Scroll } from './hooks/useScroll';
+import useScroll, { Scroll } from '../../hooks/useScroll';
 
 function NavBar() {
   const { scrollY } = useScroll();

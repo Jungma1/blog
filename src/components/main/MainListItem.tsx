@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import { Post } from './hooks/usePost';
+import { Post } from '../../hooks/usePost';
 import { navigate } from 'gatsby-link';
 import Tags from './Tags';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
-import useScroll, { Scroll } from './hooks/useScroll';
+import useScroll, { Scroll } from '../../hooks/useScroll';
 import Responsive from './Responsive';
 
 function Header() {
