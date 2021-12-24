@@ -10,6 +10,7 @@ export interface Post {
   summary: string;
   category: string;
   tags: Tag[];
+  image: any;
 }
 
 export interface Tag {

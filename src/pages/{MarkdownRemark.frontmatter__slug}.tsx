@@ -31,6 +31,13 @@ export const pageQuery = graphql`
         summary
         category
         tags
+        image {
+          childImageSharp {
+            fluid(maxWidth: 992) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

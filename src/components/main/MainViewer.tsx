@@ -6,6 +6,7 @@ import Responsive from '../common/Responsive';
 import SideBar from '../common/SideBar';
 import Utterances from '../common/Utterances';
 import { Post } from './hooks/usePost';
+import Img from 'gatsby-image';
 
 interface MainViewerProps {
   frontmatter: Post;
@@ -17,6 +18,7 @@ function MainViewer({ frontmatter, html }: MainViewerProps) {
     <Responsive>
       <MainViewerTemplate>
         <TitleBlock>
+          <Img fluid={frontmatter.image.childImageSharp.fluid} imgStyle={{ objectFit: 'cover', height: '180px' }} />
           <h1>{frontmatter.title}</h1>
           <div>
             <span>[ {frontmatter.category} ]</span>
@@ -56,8 +58,14 @@ const TitleBlock = styled.div`
   border-bottom: 2px solid ${colors.white};
   font-weight: bold;
 
+  .gatsby-image-wrapper {
+    height: 180px;
+    padding: 0;
+  }
+
   h1 {
     margin: 0;
+    margin-top: 4rem;
   }
 
   div {
