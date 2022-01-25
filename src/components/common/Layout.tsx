@@ -20,7 +20,7 @@ const GlobalStyled = createGlobalStyle`
     width: 100%;
     height: auto;
     background: ${colors.black};
-    font-family: 'Roboto';
+    font-family: -apple-system, BlinkMacSystemFont, 'Jua', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
   }
