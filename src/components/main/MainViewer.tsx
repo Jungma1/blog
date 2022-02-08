@@ -46,7 +46,6 @@ const Block = styled.div`
 
 const MainViewerTemplate = styled.div`
   animation: fadeIn 0.3s;
-  color: ${colors.white};
   margin-top: 5rem;
   margin-bottom: 5rem;
   padding-left: 1rem;
@@ -57,6 +56,7 @@ const TitleBlock = styled.div`
   margin-bottom: 4rem;
   border-bottom: 2px solid ${colors.white};
   font-weight: bold;
+  color: ${colors.white};
 
   .gatsby-image-wrapper {
     height: 180px;
@@ -83,6 +83,19 @@ const TitleBlock = styled.div`
 
 const ContentBlock = styled.div`
   font-size: 1.125rem;
+  color: ${colors.white};
+
+  p {
+    color: ${colors.white};
+
+    a {
+      color: ${colors.whiteToggle};
+    }
+  }
+
+  ul > li > a {
+    color: ${colors.whiteToggle};
+  }
 `;
 
 export default MainViewer;
