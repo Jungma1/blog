@@ -12,7 +12,7 @@ function Profile() {
           <StaticImage className="avatar" src="../../images/avatar.jpg" alt="avatar" />
         </TopBlock>
         <BottomBlock>
-          <div>안녕하세요! 프론트엔드 개발자 '민병준' 입니다!</div>
+          <div>안녕하세요! 개발자 '민병준' 입니다!</div>
           <br />
           <div>끊임없이 변화하는 기술들에 관심이 많으며, 최신 트렌드에 맞춰 코딩하는 것을 좋아합니다!</div>
           <br />
