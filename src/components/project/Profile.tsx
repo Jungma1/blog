@@ -3,31 +3,25 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from '../../lib/styles/colors';
 import Responsive from '../common/Responsive';
+import ProfileItemGroup from './ProfileItemGroup';
+import media from '../../lib/styles/media';
 
 function Profile() {
   return (
     <Responsive>
       <ProfileTemplate>
         <TopBlock>
-          <StaticImage className="avatar" src="../../images/avatar.jpg" alt="avatar" />
+          <StaticImage className="avatar" src={`../../images/avatar.jpg`} alt="avatar" />
         </TopBlock>
         <BottomBlock>
-          <div>안녕하세요! 개발자 '민병준' 입니다!</div>
-          <br />
-          <div>끊임없이 변화하는 기술들에 관심이 많으며, 최신 트렌드에 맞춰 코딩하는 것을 좋아합니다!</div>
-          <br />
-          <ImageBlock
-            src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"
-            alt="node"
-          />
-          <ImageBlock
-            src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"
-            alt="typescript"
-          />
-          <ImageBlock
-            src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB&color=gray"
-            alt="react"
-          />
+          <div className="title">안녕하세요 👋</div>
+          <div className="sub">
+            <p>
+              프론트엔드 개발자 <span>'민병준'</span> 입니다!
+            </p>
+            <p>끊임없이 변화하는 기술들에 관심이 많으며, 최신 트렌드에 맞춰 코딩하는 것을 좋아합니다!</p>
+          </div>
+          <ProfileItemGroup />
         </BottomBlock>
       </ProfileTemplate>
     </Responsive>
@@ -39,9 +33,12 @@ const ProfileTemplate = styled.div`
   flex-direction: column;
   justify-content: center;
   animation: fadeIn 0.3s;
-  align-items: center;
   padding-top: 7rem;
   padding-bottom: 7rem;
+
+  ${media.small} {
+    align-items: center;
+  }
 `;
 
 const TopBlock = styled.div`
@@ -57,16 +54,21 @@ const TopBlock = styled.div`
 `;
 
 const BottomBlock = styled.div`
-  text-align: center;
-  margin-top: 2rem;
-
+  margin-top: 5rem;
   font-size: 1.125rem;
   font-weight: bold;
   color: ${colors.white};
-`;
 
-const ImageBlock = styled.img`
-  padding-right: 0.5rem;
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .sub {
+    span {
+      color: ${colors.whiteToggle};
+    }
+  }
 `;
 
 export default Profile;

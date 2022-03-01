@@ -1,12 +1,8 @@
-import React from 'react'
-import Profile from './Profile'
+import React from 'react';
+import Profile from './Profile';
 
 function Project() {
-  return (
-    <>
-      <Profile />
-    </>
-  )
+  return <Profile />;
 }
 
-export default Project
+export default Project;

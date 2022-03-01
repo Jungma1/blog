@@ -22,9 +22,7 @@ function Header() {
               </Link>
             </div>
             <div>
-              <Link to="/projects" activeClassName="active">
-                Projects
-              </Link>
+              <a href="https://jungma.tistory.com">Blog</a>
             </div>
             <div>
               <a href="https://github.com/jungma1" target="_blank">
