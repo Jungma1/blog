@@ -7,7 +7,7 @@ import Project from '../components/project/Project';
 function MainPage() {
   return (
     <Layout>
-      <Helmet title="JUNGMA BLOG" />
+      <Helmet title="JUNGMA PORTFOLIO" />
       <Header />
       <Project />
     </Layout>

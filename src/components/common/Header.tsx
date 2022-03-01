@@ -13,7 +13,7 @@ function Header() {
       <Block>
         <HeaderTemplate scrollY={scrollY} scrollActive={scrollActive}>
           <TitleBlock>
-            <Link to="/">JUNGMA'S BLOG</Link>
+            <Link to="/">JUNGMA'S PORTFOLIO</Link>
           </TitleBlock>
           <NavBlock>
             <div>
