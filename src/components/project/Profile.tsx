@@ -10,9 +10,9 @@ function Profile() {
   return (
     <Responsive>
       <ProfileTemplate>
-        <TopBlock>
+        {/* <TopBlock>
           <StaticImage className="avatar" src={`../../images/avatar.jpg`} alt="avatar" />
-        </TopBlock>
+        </TopBlock> */}
         <BottomBlock>
           <div className="title">안녕하세요 👋</div>
           <div className="sub">
@@ -33,8 +33,8 @@ const ProfileTemplate = styled.div`
   flex-direction: column;
   justify-content: center;
   animation: fadeIn 0.3s;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 
   ${media.small} {
     align-items: center;
@@ -54,7 +54,6 @@ const TopBlock = styled.div`
 `;
 
 const BottomBlock = styled.div`
-  margin-top: 5rem;
   font-size: 1.125rem;
   font-weight: bold;
   color: ${colors.white};
