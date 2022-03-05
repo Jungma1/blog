@@ -17,7 +17,7 @@ function Profile() {
           <div className="title">안녕하세요 👋</div>
           <div className="sub">
             <p>
-              프론트엔드 개발자 <span>'민병준'</span> 입니다!
+              개발자 <span>'민병준'</span> 입니다!
             </p>
             <p>끊임없이 변화하는 기술들에 관심이 많으며, 최신 트렌드에 맞춰 코딩하는 것을 좋아합니다!</p>
           </div>
